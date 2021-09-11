@@ -1,0 +1,21 @@
+php artisan make:model Meeting -m
+php artisan migrate
+
+#make seeder
+php artisan make:seeder MeetingsTableSeeder
+#run the seeder
+php artisan db:seed --class=MeetingsTableSeeder
+
+#create controller
+php artisan make:controller MeetingController
+
+#make model
+php artisan make:model Race -m (-m for create migrations)
+#edit migration file as need
+#migrate the table
+php artisan migrate
+
+curl -X GET http://localhost:8000/api/meetings
+
+//rollback tables
+php artisan migrate:reset
